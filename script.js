@@ -7,6 +7,7 @@ var main = function()
 	});
 }
 
+// Puts all the skills
 var display = function()
 {
 	loadBegin('.panel-body');
@@ -21,6 +22,7 @@ var display = function()
 	loadEnd('.panel-body');
 }
 
+// Filter matching any field in the table
 var filter = function(event)
 {
 	var target = $('#searchField').val();
@@ -35,6 +37,7 @@ var filter = function(event)
 	}
 }
 
+// Create a loading div at the beginning of `what`
 var loadBegin = function(what)
 {
 	var div = $('<div class="loading text-center alert alert-warning">').prependTo($(what));
@@ -43,6 +46,7 @@ var loadBegin = function(what)
 	div.fadeIn();
 }
 
+// Hide and destroy the created loading div
 var loadEnd = function(what)
 {
 	$(what + ' .loading').fadeOut(function()
@@ -51,6 +55,7 @@ var loadEnd = function(what)
 	});
 }
 
+// Append `skill` to the table body
 var putSkill = function(skill)
 {
 	var tr = $('<tr>').appendTo($('table tbody'));

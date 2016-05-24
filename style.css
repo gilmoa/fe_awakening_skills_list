@@ -1,4 +1,4 @@
-/*Font*/
+/*Font for headings*/
 @import url(https://fonts.googleapis.com/css?family=Old+Standard+TT:700);
 
 body {
@@ -20,6 +20,7 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: 'Old Standard TT', serif;
 }
 
+/*position: sticky like*/
 .affix {
 	width: 100%;
 	top: 0;
