@@ -18,4 +18,7 @@ http://fireemblem.wikia.com/wiki/List_of_Skills_in_Fire_Emblem_Awakening
 nice wiki but way to heavy on me for quick checks.
 This is just like a front end to the cool stuffs.
 
-bootstrap, jquery, fontawesome and google fonts.
+* bootstrap
+* jquery
+* fontawesome
+*google fonts
