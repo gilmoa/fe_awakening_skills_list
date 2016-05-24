@@ -1,5 +1,5 @@
-#Ignore local working files
-resources/*
-!resources/jquery*
-!resources/bootstrap*
+#Ignore editor stuffs
+/doc
+*.swp
 *~
+.DS_Store

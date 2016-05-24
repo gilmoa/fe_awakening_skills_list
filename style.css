@@ -2,7 +2,7 @@
 @import url(https://fonts.googleapis.com/css?family=Old+Standard+TT:700);
 
 body {
-	background: url('https://i.kinja-img.com/gawker-media/image/upload/s--WXjZtzFx--/phwtuypdklzw6nwiawe3.jpg') no-repeat center center fixed;
+	background: url('src/bg.jpg') no-repeat center center fixed;
 	background-size: cover;
 }
 
