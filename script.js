@@ -11,7 +11,7 @@ var display = function()
 {
 	loadBegin('.panel-body');
 	$('table tbody').empty();
-	$.getJSON("skills.json", function(data)
+	$.getJSON("src/skills.json", function(data)
 	{
 		data.forEach(function(skill)
 		{
