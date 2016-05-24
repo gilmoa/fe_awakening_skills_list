@@ -1,0 +1,42 @@
+/*Font*/
+@import url(https://fonts.googleapis.com/css?family=Old+Standard+TT:700);
+
+body {
+	background: url('https://i.kinja-img.com/gawker-media/image/upload/s--WXjZtzFx--/phwtuypdklzw6nwiawe3.jpg') no-repeat center center fixed;
+	background-size: cover;
+}
+
+.page-header {
+	background-color: rgba(255, 255, 255, 0.7);
+	border-bottom-color: black;
+	border-top: 1px solid white;
+	border-radius: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Old Standard TT', serif;
+}
+
+.affix {
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 1;
+}
+
+/*Search bar small on !not small device*/
+@media screen and (min-width: 500px) {
+	.input-group {
+		width: 320px;
+		margin: 0 auto 0 auto;
+	}
+}
+
+
+/*Firefox table-responsive hack*/
+@-moz-document url-prefix() {
+  fieldset { display: table-cell; }
+}
