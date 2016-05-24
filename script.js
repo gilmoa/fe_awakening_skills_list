@@ -58,8 +58,9 @@ var loadEnd = function(what)
 // Append `skill` to the table body
 var putSkill = function(skill)
 {
+	var icon_name = skill.name.replace(/ /g, '_').toLowerCase();
 	var tr = $('<tr>').appendTo($('table tbody'));
-	$('<td>').html('<span class="glyphicon glyphicon-glass"></span>').appendTo(tr);
+	$('<td>').html('<img src="src/icons/' + icon_name + '.png" alt="' + icon_name + '">').appendTo(tr);
 	$('<th scope="row">').text(skill.name).appendTo(tr);
 	$('<td>').text(skill.class).appendTo(tr);
 	$('<td>').text(skill.level).appendTo(tr);
