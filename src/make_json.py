@@ -10,10 +10,11 @@ def put(s):
 if len(sys.argv) < 2:
 	sys.exit(0)
 
-pars = ["name", "weapons", "promotes_to", "promotes_from", "ables", "unit", "onlys"]
+pars = ["weapons", "promotes_to", "promotes_from", "ables", "unit", "onlys"]
+
+arr = {}
 
 s = {
-	"name": "",
 	"weapons": [],
 	"promotes_to": [],
 	"promotes_from": [],
@@ -22,34 +23,23 @@ s = {
 	"onlys": []
 }
 
-json_out = "["
-
 while True:
-	finish = False
-	for x in pars:
-		put(x)
-		if type(s[x]) is list:
-			tmp = input()
-			if len(tmp) > 0:
-				s[x] = tmp.split(',')
-			else:
-				s[x] = []
-
-		else:
-			s[x] = input()
-
-		if s['name'] == "end":
-			finish = True
-			break
-
-	if finish:
+	put("name")
+	name = input()
+	if name == "end":
 		break
 
-	json_out += json.dumps(s, sort_keys=True, separators=(',', ':')) + ","
+	for x in pars:
+		put(x)
+		tmp = input()
+		if len(tmp) > 0:
+			s[x] = tmp.split(',')
+		else:
+			s[x] = []
 
-json_out = json_out[:-1]
-json_out += "]\n"
+	arr[name] = s
 
+json_out = json.dumps(arr, sort_keys=True, separators=(',', ':'))
 
 of = open(sys.argv[1], "w")
 
