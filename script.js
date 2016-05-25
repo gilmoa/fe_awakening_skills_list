@@ -16,6 +16,7 @@ var main = function()
 // Puts all the skills
 var display = function()
 {
+	$('#searchField').val('');
 	loadBegin('.panel-body');
 	$('table tbody').empty();
 	$.getJSON("src/skills.json", function(data)
@@ -68,7 +69,7 @@ var putSkill = function(skill)
 	var tr = $('<tr>').appendTo($('table tbody'));
 	$('<td>').html('<img src="src/icons/' + icon_name + '.png" alt="' + icon_name + '">').appendTo(tr);
 	$('<th scope="row">').text(skill.name).appendTo(tr);
-	$('<td>').text(skill.class).appendTo(tr);
+	$('<td id="class" data-toggle="modal" data-target="#classModal">').text(skill.class).appendTo(tr);
 	$('<td>').text(skill.level).appendTo(tr);
 	$('<td>').text(skill.activation).appendTo(tr);
 	$('<td>').text(skill.effect).appendTo(tr);
