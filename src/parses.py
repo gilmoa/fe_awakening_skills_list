@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 #
 
-# regexp: ^(.+?)\t(.+?)\t(.+?)\t(.+?)\t(.+?)$
+# regexp: ^(.+?)\t(.+?)\t(.+?)\t(.+?)\t(.+?)$ /gm/
 
 import re
 import json
 
-f = open("feskills_no_icon.txt", "r")
+f = open("skills_raw.txt", "r")
 text = f.read()
 f.close()
 
@@ -16,20 +16,19 @@ r = re.compile('^(.+?)\t(.+?)\t(.+?)\t(.+?)\t(.+?)$', re.MULTILINE)
 
 matches = re.findall(r, text)
 
-json_out = "["
+arr = []
 
 for m in matches:
 	s = {
-		"name": m[0],
-		"class": m[1],
+		"name": m[0].lower(),
+		"class": m[1].lower(),
 		"level": m[2],
 		"activation": m[3],
 		"effect": m[4]
 	}
-	# print("{\"skill\":\"" + m[0] + "\",\"class\":\"" + m[1] +"\",\"level\":" + m[2] +",\"activation\":\"" + m[3] +"\",\"effect\":\"" + m[4] +"\"},", end = "")
-	json_out += json.dumps(s, sort_keys=True, separators=(',', ':')) + ","
 
-json_out = json_out[:-1]
-json_out += "]"
+	arr.append(s)
+
+json_out = json.dumps(arr, sort_keys=True, separators=(',', ':'))
 
 print(json_out)

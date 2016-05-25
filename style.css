@@ -20,6 +20,14 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: 'Old Standard TT', serif;
 }
 
+table {
+	text-transform: capitalize;
+}
+
+.not-capital {
+	text-transform: none;
+}
+
 /*position: sticky like*/
 .affix {
 	width: 100%;

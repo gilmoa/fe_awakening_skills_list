@@ -65,14 +65,14 @@ var loadEnd = function(what)
 // Append `skill` to the table body
 var putSkill = function(skill)
 {
-	var icon_name = skill.name.replace(/ /g, '_').toLowerCase();
+	var icon_name = skill.name.replace(/ /g, '_');
 	var tr = $('<tr>').appendTo($('table tbody'));
 	$('<td>').html('<img src="src/icons/' + icon_name + '.png" alt="' + icon_name + '">').appendTo(tr);
 	$('<th scope="row">').text(skill.name).appendTo(tr);
 	$('<td id="class" data-toggle="modal" data-target="#classModal">').text(skill.class).appendTo(tr);
 	$('<td>').text(skill.level).appendTo(tr);
 	$('<td>').text(skill.activation).appendTo(tr);
-	$('<td>').text(skill.effect).appendTo(tr);
+	$('<td class="not-capital">').text(skill.effect).appendTo(tr);
 }
 
 // :containsCI = :contains Case Insensitive
