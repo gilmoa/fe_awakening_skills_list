@@ -18,7 +18,7 @@ s = {
 	"promotes_to": [],
 	"promotes_from": [],
 	"ables": [],
-	"unit": "",
+	"unit": [],
 	"onlys": []
 }
 
@@ -29,7 +29,12 @@ while True:
 	for x in pars:
 		put(x)
 		if type(s[x]) is list:
-			s[x] = input().split(',')
+			tmp = input()
+			if len(tmp) > 0:
+				s[x] = tmp.split(',')
+			else:
+				s[x] = []
+
 		else:
 			s[x] = input()
 
@@ -51,4 +56,4 @@ of = open(sys.argv[1], "w")
 of.write(json_out)
 of.close()
 
-print("Saved")
+print("\n\nSaved")

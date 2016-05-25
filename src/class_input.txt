@@ -1,0 +1,323 @@
+lord
+sword
+great lord
+
+rapiers,noble rapiers
+
+chrom,lucina
+great lord
+sword,lance
+
+lord
+rapiers,noble rapiers
+
+chrom,lucina
+tactician
+sword,tome
+grandmaster
+
+
+
+
+grandmaster
+sword,tome
+
+tactician
+
+
+
+cavalier
+sword,lance
+paladin,great knight
+
+
+beast
+
+paladin
+sword,lance
+
+cavalier
+
+beast
+
+knight
+lance
+general,great knight
+
+
+armor
+
+general
+lance,axe
+
+knight
+
+armor
+
+great knight
+sword,lance,axe
+
+cavalier,knight
+
+beast,armor
+
+myrmidon
+sword
+swordmaster,assassin
+
+amatsu,sol katti
+
+
+swordmaster
+sword
+
+myrmidon
+amatsu,sol katti
+
+
+thief
+sword
+trickster,assassin
+
+
+
+
+trickster
+sword,staff
+
+thief
+
+
+
+assassin
+sword,bow
+
+myrmidon,thief
+
+
+
+barbarian
+axe
+berserker,warrior
+
+
+
+male
+berserker
+axe
+
+barbarian
+
+
+male
+fighter
+axe
+warrior,hero
+
+
+
+male
+warrior
+axe,bow
+
+barbarian,fighter
+
+
+male
+mercenary
+sword
+hero,bow knight
+
+
+
+
+hero
+sword,axe
+
+fighter,mercenary
+
+
+
+archer
+bow
+sniper,bow knight
+
+longbow,towering bow,double bow
+
+
+sniper
+bow
+
+archer
+longbow,towering bow,double bow
+
+
+bow knight
+bow,sword
+
+mercenary,archer
+
+beast
+
+dark mage
+tome
+sorcerer,dark knight
+
+dark tomes
+
+
+sorcerer
+tome
+
+dark mage
+dark tomes
+
+
+mage
+tome
+sage,dark knight
+
+
+
+
+sage
+tome,staff
+
+make,priest/cleric
+
+
+
+dark knight
+tome,sword
+
+dark mage,mage
+
+beast
+
+priest/cleric
+staff
+war cleric/monk,sage
+
+
+
+
+war cleric/monk
+staff,axe
+
+priest,troubadour
+
+
+
+troubadour
+staff
+valkyrie,war cleric/monk
+
+
+beast
+female
+valkyrie
+staff,tome
+
+troubadour
+
+beast
+female
+pegasus knight
+lance
+falcon knight,dark flier
+
+
+flying,beast
+female
+falcon knight
+lance,staff
+
+pegasus knight
+
+flying,beast
+female
+dark flier
+lance,tome
+
+pegasus knight
+
+flying,beast
+female
+wyvern rider
+axe
+wyvenr lord,griffon rider
+
+
+flying,dragon
+
+wyvern lord
+axe,lance
+
+wyvern rider
+
+flying,dragon
+
+griffon rider
+axe
+
+wyvern rider
+
+flying,beast
+
+villager
+lance
+
+
+
+
+male
+dancer
+sword
+
+
+dance command
+
+olivia
+taguel
+beaststone
+
+
+
+beast
+
+manakete
+dragonstone
+
+
+
+dragon
+
+conqueror
+sword,lance,axe
+
+
+
+beast,armor
+walhart
+lodestar
+sword
+
+
+rapiers,noble rapiers
+marth
+marth
+dread fighter
+sword,axe,tome
+
+
+
+
+dread scroll DLC - male
+bride
+lance,bow,staff
+
+
+
+
+wedding bouquet DLC - female
+end

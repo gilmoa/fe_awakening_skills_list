@@ -17,16 +17,21 @@ while True:
 	finish = False
 	for x in pars:
 		put(x)
-		x = input()
+		y = input()
 
-		if x == "end":
+		if y == "end":
 			finish = True
 			break
 
-		outs += x + '\n'
+		outs += y + '\n'
+
+		if x == "name":
+			last_name = y
 
 	if finish:
 		break
+
+	print("=== " + last_name)
 
 of = open(sys.argv[1], "a")
 
