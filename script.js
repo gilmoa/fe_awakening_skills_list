@@ -5,6 +5,12 @@ var main = function()
 	{
 			filter();
 	});
+	$('#search-addon').click(function()
+	{
+		$('#searchField').val('');
+		$('#searchField').focus();
+		filter();
+	});
 }
 
 // Puts all the skills
