@@ -1,5 +1,3 @@
-var classes = {};
-
 var main = function()
 {
 	display();
@@ -16,16 +14,10 @@ var main = function()
 		filter();
 	});
 
-	$.getJSON('src/classes.json', function(data)
-	{
-		classes = data;
-	});
-
-
 	$('tbody').on("click", "#class", function()
 	{
 		loadBegin('.modal-content');
-		$('#classModal').modal();
+		// $('#classModal').modal();
 		putClass($(this).text());
 		loadEnd('.modal-content');
 	});
@@ -37,7 +29,7 @@ var display = function()
 	$('#searchField').val('');
 	loadBegin('.panel-body');
 	$('table tbody').empty();
-	$.getJSON("src/skills.json", function(data)
+	$.getJSON("api.php?skill=all", function(data)
 	{
 		data.forEach(function(skill)
 		{
@@ -87,8 +79,8 @@ var putSkill = function(skill)
 	var tr = $('<tr>').appendTo($('table tbody'));
 	$('<td>').html('<img src="src/icons/' + icon_name + '.png" alt="' + icon_name + '">').appendTo(tr);
 	$('<th scope="row">').text(skill.name).appendTo(tr);
-	// $('<td id="class" data-toggle="modal" data-target="#classModal">').text(skill.class).appendTo(tr);
-	$('<td id="class">').text(skill.class).appendTo(tr);
+	$('<td id="class" data-toggle="modal" data-target="#classModal">').text(skill.class).appendTo(tr);
+	// $('<td id="class">').text(skill.class).appendTo(tr);
 	$('<td>').text(skill.level).appendTo(tr);
 	$('<td>').text(skill.activation).appendTo(tr);
 	$('<td class="not-capital">').text(skill.effect).appendTo(tr);
@@ -97,9 +89,30 @@ var putSkill = function(skill)
 var putClass = function(class_name)
 {
 	$('.modal-title').text(class_name);
-	var c = classes[class_name];
-	$('.modal-body #from').text(c.promotes_from.join(', '));
-	$('.modal-body #to').text(c.promotes_to.join(', '));
+	var dl = $('.modal-body dl');
+	dl.empty();
+	$.getJSON('api.php?class=' + class_name, function(c)
+	{
+		makeDL("weapons", c.weapons, dl);
+		makeDL("from", c.promotes_from, dl);
+		makeDL("to", c.promotes_to, dl);
+		makeDL("allows", c.ables, dl);
+		makeDL("unit", c.unit, dl);
+		makeDL("only", c.onlys, dl);
+	});
+}
+
+var makeDL = function(text, what, ap)
+{
+	if(what.length < 1) return;
+	
+	$('<dt class="list-group-item">').text(text).appendTo(ap);
+	var ul = $('<ul class="list-group list-group-horizontal">');
+	ul.appendTo($('<dd>').appendTo(ap));
+	what.forEach(function(x)
+	{
+		$('<li class="list-group-item">').text(x).appendTo(ul);
+	});
 }
 
 // :containsCI = :contains Case Insensitive
