@@ -1,15 +1,33 @@
+var classes = {};
+
 var main = function()
 {
 	display();
+
 	$('#searchField').keyup(function()
 	{
 			filter();
 	});
+
 	$('#search-addon').click(function()
 	{
 		$('#searchField').val('');
 		$('#searchField').focus();
 		filter();
+	});
+
+	$.getJSON('src/classes.json', function(data)
+	{
+		classes = data;
+	});
+
+
+	$('tbody').on("click", "#class", function()
+	{
+		loadBegin('.modal-content');
+		$('#classModal').modal();
+		putClass($(this).text());
+		loadEnd('.modal-content');
 	});
 }
 
@@ -69,10 +87,19 @@ var putSkill = function(skill)
 	var tr = $('<tr>').appendTo($('table tbody'));
 	$('<td>').html('<img src="src/icons/' + icon_name + '.png" alt="' + icon_name + '">').appendTo(tr);
 	$('<th scope="row">').text(skill.name).appendTo(tr);
-	$('<td id="class" data-toggle="modal" data-target="#classModal">').text(skill.class).appendTo(tr);
+	// $('<td id="class" data-toggle="modal" data-target="#classModal">').text(skill.class).appendTo(tr);
+	$('<td id="class">').text(skill.class).appendTo(tr);
 	$('<td>').text(skill.level).appendTo(tr);
 	$('<td>').text(skill.activation).appendTo(tr);
 	$('<td class="not-capital">').text(skill.effect).appendTo(tr);
+}
+
+var putClass = function(class_name)
+{
+	$('.modal-title').text(class_name);
+	var c = classes[class_name];
+	$('.modal-body #from').text(c.promotes_from.join(', '));
+	$('.modal-body #to').text(c.promotes_to.join(', '));
 }
 
 // :containsCI = :contains Case Insensitive

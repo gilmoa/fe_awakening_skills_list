@@ -14,16 +14,16 @@ pars = ["weapons", "promotes_to", "promotes_from", "ables", "unit", "onlys"]
 
 arr = {}
 
-s = {
-	"weapons": [],
-	"promotes_to": [],
-	"promotes_from": [],
-	"ables": [],
-	"unit": [],
-	"onlys": []
-}
-
 while True:
+	s = {
+		"weapons": [],
+		"promotes_to": [],
+		"promotes_from": [],
+		"ables": [],
+		"unit": [],
+		"onlys": []
+	}
+
 	put("name")
 	name = input()
 	if name == "end":
