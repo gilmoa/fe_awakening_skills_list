@@ -105,7 +105,6 @@ var putClass = function(class_name)
 var makeDL = function(text, what, ap)
 {
 	if(what.length < 1) return;
-	
 	$('<dt class="list-group-item">').text(text).appendTo(ap);
 	var ul = $('<ul class="list-group list-group-horizontal">');
 	ul.appendTo($('<dd>').appendTo(ap));
