@@ -70,13 +70,17 @@ dd .list-group-item {
 }
 
 /*Search bar small on !not small device*/
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 320px) {
 	.input-group {
 		width: 320px;
 		margin: 0 auto 0 auto;
 	}
+}
 
-
+@media screen and (min-width: 768px) {
+	.modal-body {
+		text-align: left;
+	}
 }
 
 

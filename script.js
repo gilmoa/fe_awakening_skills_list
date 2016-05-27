@@ -80,8 +80,7 @@ var putSkill = function(skill)
 	$('<td>').html('<img src="src/icons/' + icon_name + '.png" alt="' + icon_name + '">').appendTo(tr);
 	$('<th scope="row">').text(skill.name).appendTo(tr);
 	$('<td id="class" data-toggle="modal" data-target="#classModal">').text(skill.class).appendTo(tr);
-	// $('<td id="class">').text(skill.class).appendTo(tr);
-	$('<td>').text(skill.level).appendTo(tr);
+	$('<td class="text-right">').text(skill.level).appendTo(tr);
 	$('<td>').text(skill.activation).appendTo(tr);
 	$('<td class="not-capital">').text(skill.effect).appendTo(tr);
 }
@@ -94,8 +93,8 @@ var putClass = function(class_name)
 	$.getJSON('api.php?class=' + class_name, function(c)
 	{
 		makeDL("weapons", c.weapons, dl);
-		makeDL("from", c.promotes_from, dl);
-		makeDL("to", c.promotes_to, dl);
+		makeDL("promotes from", c.promotes_from, dl);
+		makeDL("promotes to", c.promotes_to, dl);
 		makeDL("allows", c.ables, dl);
 		makeDL("unit", c.unit, dl);
 		makeDL("only", c.onlys, dl);
