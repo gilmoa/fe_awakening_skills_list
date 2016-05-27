@@ -17,7 +17,6 @@ var main = function()
 	$('tbody').on("click", "#class", function()
 	{
 		loadBegin('.modal-content');
-		// $('#classModal').modal();
 		putClass($(this).text());
 		loadEnd('.modal-content');
 	});
@@ -79,8 +78,15 @@ var putSkill = function(skill)
 	var tr = $('<tr>').appendTo($('table tbody'));
 	$('<td>').html('<img src="src/icons/' + icon_name + '.png" alt="' + icon_name + '">').appendTo(tr);
 	$('<th scope="row">').text(skill.name).appendTo(tr);
-	var classtr = $('<td id="class" data-toggle="modal" data-target="#classModal">').appendTo(tr);
-	$('<a class="label label-default">').text(skill.class).appendTo(classtr);
+	if(skill.class.length > 0)
+	{
+		var classtr = $('<td id="class" data-toggle="modal" data-target="#classModal">').appendTo(tr);
+		$('<a class="label label-default">').text(skill.class).appendTo(classtr);
+	}
+	else
+	{
+		$('<td>').appendTo(tr);
+	}
 	$('<td class="text-right">').text(skill.level).appendTo(tr);
 	$('<td>').text(skill.activation).appendTo(tr);
 	$('<td class="not-capital">').text(skill.effect).appendTo(tr);
