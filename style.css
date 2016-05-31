@@ -37,6 +37,15 @@ table, .modal-content {
 	text-transform: none;
 }
 
+.modal-header {
+	background-color: #2a2a2a;
+	color: white;
+}
+
+.modal-header .close {
+	color: white;
+}
+
 .list-group-item {
 	border: none;
 }
@@ -45,7 +54,10 @@ dd .list-group-item {
 	background-color: #2a2a2a;
 	border: none;
 	color: #eeeeee;
-	cursor: pointer;
+}
+
+dd .list-group-item:hover {
+	background-color: #1a1a1a;
 }
 
 /* list-group horizontal
