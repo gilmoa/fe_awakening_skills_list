@@ -44,8 +44,23 @@ var filter = function(event)
 	var target = $('#searchField').val();
 	if(target.length > 0)
 	{
-		$('tbody tr:containsCI(' + target + ')').fadeIn();
-		$('tbody tr:not(:containsCI(' + target + '))').fadeOut();
+		// Search everywhere
+		// $('tbody tr:containsCI(' + target + ')').fadeIn();
+		// $('tbody tr:not(:containsCI(' + target + '))').fadeOut();
+
+		// Search only skill name and class
+		var lines = $('tbody').find('tr');
+
+		lines.each(function(tr)
+		{
+			if(
+				$(this).children('th').is(':containsCI(' + target + ')') ||
+				$(this).children('#class').is(':containsCI(' + target + ')')
+			)
+				$(this).fadeIn();
+			else
+				$(this).fadeOut();
+		});
 	}
 	else
 	{
