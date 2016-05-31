@@ -45,6 +45,7 @@ dd .list-group-item {
 	background-color: #2a2a2a;
 	border: none;
 	color: #eeeeee;
+	cursor: pointer;
 }
 
 /* list-group horizontal
